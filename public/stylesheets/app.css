@@ -10,3 +10,21 @@ body {
 .container.main {
     margin-top: 7.0em;
 }
+
+div#form {
+    background-color: rgba(145, 145, 145, 0.7);
+    border-radius: 15px;
+}
+
+#text {
+    background-color: rgb(201, 201, 201);
+}
+
+#text::placeholder {
+    color: rgba(64, 64, 64, 1);
+    opacity: 1;
+}
+
+#sub-btn {
+    background-color: silver;
+}
