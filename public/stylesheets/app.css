@@ -35,3 +35,12 @@ div#top {
     border: none;
     color: #b8b8b8;
 }
+
+a#edit {
+    margin-top: 15px;
+    margin-right: 30px;
+}
+
+form#delete {
+    display: inline;
+}
