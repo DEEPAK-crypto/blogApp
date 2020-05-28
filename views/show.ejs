@@ -4,10 +4,13 @@
             <%= blog.title %>
         </div>
         <div class="ui top attached segment" id='top'>
-            <img src="<%=blog.image%>" alt="">
-            <p>
-                <%= blog.body %>
-            </p>
+            <img style="margin-bottom: 20px;" class='ui centered rounded image' src="<%=blog.image%>" alt="">
+            <div style="margin-bottom: 10px;" class="content"><span><%= blog.create.toDateString() %> </span></div>
+            <div class='description'>
+                <p>
+                    <%= blog.body %>
+                </p>
+            </div>
         </div>
     </div>
     <%- include ("partials/footer")%>

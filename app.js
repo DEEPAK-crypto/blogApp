@@ -56,5 +56,14 @@ app.get('/blogs/:id', function(req, res) {
             res.render('show', { blog: blog });
     });
 });
+app.get('/blogs/:id/edit', function(req, res) {
+    Blog.findById(req.params.id, function(err, blog) {
+        if (err)
+            res.redirect('/blogs');
+        else
+            res.render("edit", { blog: blog });
+    });
+
+});
 
 app.listen(3000);
