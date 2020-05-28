@@ -1,4 +1,5 @@
 var express = require('express');
+methodOverride = require('method-override');
 app = express();
 bodyParser = require("body-parser");
 mongoose = require('mongoose');
@@ -7,6 +8,7 @@ mongoose.connect("mongodb://localhost:27017/blog_app", { useNewUrlParser: true, 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 //MONGOOSE MODEL CONFIG
 var blogSchema = new mongoose.Schema({
@@ -56,6 +58,7 @@ app.get('/blogs/:id', function(req, res) {
             res.render('show', { blog: blog });
     });
 });
+
 app.get('/blogs/:id/edit', function(req, res) {
     Blog.findById(req.params.id, function(err, blog) {
         if (err)
@@ -65,5 +68,10 @@ app.get('/blogs/:id/edit', function(req, res) {
     });
 
 });
+
+app.put('/blogs/:id', function(req, res) {
+    res.send('it worked!');
+});
+
 
 app.listen(3000);
